@@ -37,10 +37,10 @@ class WeixinInterface:
         to_user = xml.find("ToUserName").text
         if msg_type == 'event':
             if xml.find("Event").text == 'subscribe':
-                return self.render.reply_text(from_user, to_user, int(time.time()), "thank you for subscribing!")
+                return self.render.reply_text(from_user, to_user, int(time.time()), "Thank you for subscribing!")
         if msg_type == 'text':
             content = xml.find("Content").text
             if content == 'help':
                 return self.render.reply_text(from_user, to_user, int(time.time()), "随便看看？（对不起我功能有限QAQ）")
             else:
-                return self.render.reply_text(from_user, to_user, int(time.time()), "哎呀出错了 输入个help看看如何正确的调戏我？")
+                return self.render.reply_text(from_user, to_user, int(time.time()), content)
