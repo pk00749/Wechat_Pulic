@@ -40,7 +40,14 @@ class WeixinInterface:
                 return self.render.reply_text(from_user, to_user, int(time.time()), "Thank you for subscribing!")
         if msg_type == 'text':
             content = xml.find("Content").text
-            if content == 'help':
+            if content[0:2] == '快递':
+                post = str(content[2:])
+                query = urllib2.urlopen('http://www.kuaidi100.com/autonumber/autoComNum?text='+post)
+                h = query.read
+                k = eval(h)
+                result = k["auto"][0]['comCode']
+                return self.render.reply_text(from_user,to_user,int(time.time()), result)
+            elif content == 'help':
                 return self.render.reply_text(from_user, to_user, int(time.time()), "随便看看？（对不起我功能有限QAQ）")
             else:
                 return self.render.reply_text(from_user, to_user, int(time.time()), content)
