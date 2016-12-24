@@ -19,7 +19,7 @@ class WeixinInterface:
         timestamp=data.timestamp
         nonce=data.nonce
         echostr=data.echostr
-        token= "warcraftyork"
+        token= "weixin"
         list=[token,timestamp,nonce]
         list.sort()
         sha1=hashlib.sha1
