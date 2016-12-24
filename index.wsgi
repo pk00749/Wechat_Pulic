@@ -1,4 +1,4 @@
-#coding: UTF-8
+# coding: UTF-8
 import os
 import sae
 import web
@@ -6,7 +6,7 @@ import web
 from weixinInterface import WeixinInterface
 
 urls = (
-'/wxreplyer','WeixinInterface'
+'/weixin','WeixinInterface'
 )
 
 app_root = os.path.dirname(__file__)
