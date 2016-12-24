@@ -27,7 +27,5 @@ class WeixinInterface:
         map(sha1.update, list)
         hashcode = sha1.hexdigest()  # sha1加密算法
 
-
-        #如果是来自微信的请求，则回复echostr
-        if hashcode == signature:
+        if hashcode == signature:  # 如果是来自微信的请求，则回复echostr
             return echostr
