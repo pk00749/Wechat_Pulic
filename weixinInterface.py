@@ -13,7 +13,7 @@ class WeixinInterface:
         self.templates_root = os.path.join(self.app_root, 'templates')  # get the path of templates
         self.render = web.template.render(self.templates_root)  # apply template
 
-    def get(self):  # get input parameter
+    def GET(self):  # get input parameter
         data = web.input()
         signature = data.signature
         timestamp = data.timestamp
@@ -29,7 +29,7 @@ class WeixinInterface:
         if hashcode == signature:  # 如果是来自微信的请求，则回复echostr
             return echostr
 
-    def post(self):
+    def POST(self):
         str_xml = web.data()  # get data from post
         xml = etree.fromstring(str_xml)  # 进行XML解析
         msgType = xml.find("MsgType").text
