@@ -44,11 +44,12 @@ class WeixinInterface:
                 post = str(content[7:])
                 if post is not None:
                     query = urllib2.urlopen('http://www.kuaidi100.com/autonumber/autoComNum?text='+post)
-                    return self.render.reply_text(from_user, to_user, int(time.time()), query)
+                    h = query.read
+                    return self.render.reply_text(from_user, to_user, int(time.time()), h)
                 else:
                     return self.render.reply_text(from_user, to_user, int(time.time()), "copy that")
                 # 883884431991145739
-                # h = query.read
+
                 # k = eval(h)
                 # result = k["auto"][0]['comCode']
 
