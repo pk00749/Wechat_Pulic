@@ -1,4 +1,4 @@
-$def with (toUser,fromUser,createTime,title,url)
+$def with (toUser,fromUser,createTime,title,picurl,url)
 <xml>
 <ToUserName><![CDATA[$toUser]]></ToUserName>
 <FromUserName><![CDATA[$fromUser]]></FromUserName>
@@ -8,6 +8,7 @@ $def with (toUser,fromUser,createTime,title,url)
 <Articles>
 <item>
 <Title><![CDATA[$title]]></Title>
+<PicUrl><![CDATA[$picurl]]></PicUrl>
 <Url><![CDATA[$url]]></Url>
 </item>
 </Articles>

@@ -46,7 +46,8 @@ class WeixinInterface:
             content = xml.find("Content").text
             if content == 'article':
                 return self.render.article(from_user, to_user, int(time.time()), 'test', \
-                                           'http://mp.weixin.qq.com/s/4jOiowKp5QH7X-9xzpuhTQ?scene=25#wechat_redirect')
+                                          'http://mmbiz.qpic.cn/mmbiz_jpg/SJxFylPllWzTlXOnVCouN59OcfZbaGwBibRQq8TRibsUpDe9mNLKPMSQia9fK2OtBgc4CckAFibmF5hURjkhiclPicFA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1', \
+                                          'http://mp.weixin.qq.com/s/4jOiowKp5QH7X-9xzpuhTQ?scene=25#wechat_redirect')
             if content[0:7] == 'express':
                 post = str(content[7:])
                 if post is not None:
