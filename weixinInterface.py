@@ -56,4 +56,4 @@ class WeixinInterface:
             elif content == 'help':
                 return self.render.reply_text(from_user, to_user, int(time.time()), "随便看看？（对不起我功能有限QAQ）")
             else:
-                return self.render.reply_text(from_user, to_user, int(time.time()), "to:"+to_user, "from:"+from_user + content)
+                return self.render.reply_text(from_user, to_user, int(time.time()), content)
