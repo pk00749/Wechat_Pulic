@@ -46,7 +46,7 @@ class WeixinInterface:
             content = xml.find("Content").text
             if content == 'article':
                 return self.render.article(from_user, to_user, int(time.time()), 'test')
-                # return self.render.reply_text(from_user, to_user, int(time.time()), 'http://mp.weixin.qq.com/s/4jOiowKp5QH7X-9xzpuhTQ?scene=25#wechat_redirect')
+                #'http://mp.weixin.qq.com/s/4jOiowKp5QH7X-9xzpuhTQ?scene=25#wechat_redirect')
             if content[0:7] == 'express':
                 post = str(content[7:])
                 if post is not None:
