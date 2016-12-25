@@ -1,13 +1,13 @@
 $def with (toUser,fromUser,createTime,title)
 <xml>
-<ToUserName><![CDATA[toUser]]></ToUserName>
-<FromUserName><![CDATA[fromUser]]></FromUserName>
+<ToUserName><![CDATA[$toUser]]></ToUserName>
+<FromUserName><![CDATA[$fromUser]]></FromUserName>
 <CreateTime>$createTime</CreateTime>
 <MsgType><![CDATA[news]]></MsgType>
 <ArticleCount>1</ArticleCount>
 <Articles>
 <item>
-<Title><![CDATA[title]]></Title>
+<Title><![CDATA[$title]]></Title>
 </item>
 </Articles>
 </xml>
