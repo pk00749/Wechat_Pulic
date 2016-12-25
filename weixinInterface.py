@@ -39,10 +39,7 @@ class WeixinInterface:
             if xml.find("Event").text == 'subscribe':
                 return self.render.reply_text(from_user, to_user, int(time.time()), "Thank you for subscribing!")
         if msg_type == 'location':
-            x = xml.find("Location_x").text
-            y = xml.find("Location_y").text
             return self.render.reply_text(from_user, to_user, int(time.time()), "Location")
-            # return self.render.reply_text(from_user, to_user, int(time.time()), "Location"+x)
 
         if msg_type == 'text':
             content = xml.find("Content").text
