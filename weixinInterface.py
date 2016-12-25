@@ -40,7 +40,7 @@ class WeixinInterface:
                 return self.render.reply_text(from_user, to_user, int(time.time()), "Thank you for subscribing!")
         if msg_type == 'text':
             content = xml.find("Content").text
-            if content[0:2] == 'express':
+            if content[0:7] == 'express':
                 return self.render.reply_text(from_user, to_user, int(time.time()), "copy that")
                 # post = str(content[2:])
                 # query = urllib2.urlopen('http://www.kuaidi100.com/autonumber/autoComNum?text='+post)
