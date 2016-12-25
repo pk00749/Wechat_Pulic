@@ -41,14 +41,14 @@ class WeixinInterface:
         if msg_type == 'text':
             content = xml.find("Content").text
             if content[0:7] == 'express':
-                return self.render.reply_text(from_user, to_user, int(time.time()), "copy that")
-                # post = str(content[2:])
-                # query = urllib2.urlopen('http://www.kuaidi100.com/autonumber/autoComNum?text='+post)
-                # # 883884431991145739
-                # h = query.read
-                # k = eval(h)
-                # result = k["auto"][0]['comCode']
-                # return self.render.reply_text(from_user,to_user,int(time.time()), result)
+                # return self.render.reply_text(from_user, to_user, int(time.time()), "copy that")
+                post = str(content[7:])
+                query = urllib2.urlopen('http://www.kuaidi100.com/autonumber/autoComNum?text='+post)
+                # 883884431991145739
+                h = query.read
+                k = eval(h)
+                result = k["auto"][0]['comCode']
+                return self.render.reply_text(from_user,to_user,int(time.time()), result)
             elif content == 'help':
                 return self.render.reply_text(from_user, to_user, int(time.time()), "随便看看？（对不起我功能有限QAQ）")
             else:
